@@ -28,21 +28,19 @@ def location_array(arr_shape):
         for example:
             
         shape(4,3)-->
-        [[0,0]
-         [0,1]
-         [0,2]
-         [1,0]
-         [1,1]
-         [1,2]
+        [[0,0],
+         [0,1],
+         [0,2],
+         [1,0],
+         [1,1],
+         [1,2],
          ...
-         [3,0]
-         [3,1]
+         [3,0],
+         [3,1],
          [3,2]]
     '''
     m,n = arr_shape
-    loc = []
-    for i in range(m):
-        loc += [[i,j] for j in range(n)]
+    loc = [[i,j] for i in range(m) for j in range(n)]
     loc_arr = np.array(loc,dtype = np.int32)
     return(loc_arr)
     
